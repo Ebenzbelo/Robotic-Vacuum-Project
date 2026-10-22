@@ -16,3 +16,5 @@ Thus, DriveToLocation and RandomDrive are two superstates. My Stateflow chart wi
 <img width="1041" height="235" alt="Sample" src="https://github.com/user-attachments/assets/9dd5f7a3-0d64-46b2-993a-ef76501d833f" />
 
 For this project, the driving dynamics of the robotic vacuum have been built in Simulink. I will connect simulated sensor data and other information from this model to your Stateflow chart in order to set the desired velocity and angular velocity commands to be sent to the robot.
+
+### METHODOLOGY
