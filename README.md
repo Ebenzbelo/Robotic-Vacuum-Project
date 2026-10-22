@@ -54,6 +54,12 @@ The DriveToLocation behavior is now complete. The RandomDrive behavior is simila
 
 After bumping into a wall, the robot transitions to the random rotation behavior. This is detected by a bump sensor and recorded in the Simulink signal, bump. A value of 1 indicates a detection.
 
+To achieve a random rotation, you can create a random variable, tRotate, that represents the amount of time to remain in the rotation state. You can then use this value as the argument in a temporal operator to determine when to transition back to the FindWall state.
+
+When a given drive mode task is complete, send a flag back to Simulink. 
+
+Finally, to uncross the signals, change the port order in the Stateflow chart.
+
 STEP 1: 
 The states DriveToLocation, RandomDrive, and TaskComplete are created with the DriveToLocation designed as the default state.
 
@@ -89,3 +95,23 @@ Add state entry actions to FindWall and RotateRandom to set the velocity, v, and
 Add a condition on the transition from FindWall to RotateRandom such that the transition is valid when a bump is detected. Define bump as Input Data.
  
 Then, add a condition action that increments bumpCount by 1 when the condition is true.
+
+STEP 6:
+Add the following MATLAB command to the RotateRandom entry action. The command generates a random number between 2.5 and 4.
+ 
+tRotate = rand(1)*1.5+2.5;
+ 
+Use tRotate and a temporal operator to transition from RotateRandom to FindWall after 2.5-4 seconds. Remember to Resolve undefined symbols to define tRotate as Local Data.
+
+Set complete to 1 upon entering the TaskComplete state. Define this as Output Data in the Symbols panel.
+Then, navigate to Simulink and connect the unconnected signals with their corresponding ports on the Stateflow chart, based on the signal names.
+
+STEP 7:
+Change the input port of bump to port 2, so the resulting input port order is as follows.
+1 – driveMode
+2 – bump
+3 – desiredDist
+4 – desiredRot
+5 – elapsedDist
+6 – elapsedRot
+
