@@ -115,6 +115,9 @@ Change the input port of bump to port 2, so the resulting input port order is as
 5 – elapsedDist
 6 – elapsedRot
 
+## CONCLUSION 
+In the completion of the design, a driving pattern in which the robot can either dock or drive a random pattern around the room has been implemented successful, which helps the model to operate like a typical robotic vacuum with supervisory control. 
+Although, many early or discount models of robotic vacuums follow a random pattern, which is simple to implement, yet less efficient than using a map.  
 
 ## REFERENCE 
 
