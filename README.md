@@ -118,5 +118,5 @@ Change the input port of bump to port 2, so the resulting input port order is as
 
 ## REFERENCE 
 
-<a href="https://matlabacademy.mathworks.com/?page=1&sort=featured">Stateflow Onramp - MathWorks Inc.</a>
-<a href="https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html">MATLAB R2026a Tool</a>
+- <a href="https://matlabacademy.mathworks.com/?page=1&sort=featured">Stateflow Onramp - MathWorks Inc.</a>
+- <a href="https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html">MATLAB R2026a Tool</a>
